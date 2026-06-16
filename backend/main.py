@@ -4,9 +4,10 @@ from routers import agirlik, disli, kesme, oring, kama
 
 app = FastAPI(title="Mühendis Portal API", version="1.0.0")
 
+# During initial deployment allow all origins for easy testing. Lock down later if needed.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://localhost:3000"],
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
